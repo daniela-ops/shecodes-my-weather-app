@@ -28,6 +28,7 @@ li {
 .todays-temperature strong {
   font-size: 70px;
   line-height: 1;
+  text-emphasis: none;
 }
 .todays-temperature .units {
   position: relative;
@@ -36,8 +37,9 @@ li {
 }
 .weather-app-container {
   padding: 30px;
-  border: 1px solid lightgray;
+  border: 1px solid whitesmoke;
   border-radius: 5px;
+  background: whitesmoke;
 }
 .weather-app-container-wrapper {
   width: 600px;
@@ -45,6 +47,7 @@ li {
 }
 .sunny-day {
   width: 200px;
+  margin-bottom: 10px;
 }
 .weekly-temp {
   margin-top: 20px;
