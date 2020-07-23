@@ -23,7 +23,7 @@ span {
 }
 .todays-temperature {
   text-align: center;
-  margin: 20px;
+  margin: 5px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -49,6 +49,12 @@ span {
 .weekly-temp {
   margin-top: 20px;
   text-align: center;
+}
+.weather-forecast img {
+  display: block;
+  margin: 0 auto;
+  height: 48px;
+  width: 48px;
 }
 .todays-temperature .active {
   color: black;
