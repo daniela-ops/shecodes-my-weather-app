@@ -40,6 +40,20 @@ if (hour < 10) {
 dateElement.innerHTML = `${day}, ${month} ${date} ${year}`;
 timeElement.innerHTML = `${hour}:${minute}`;
 
+function formatHours(timestamp){
+let date = new Date(timestamp);
+let hours = date.getHours();
+let(hours < 10){
+    hours = `0${hours}`;
+}
+let minutes = date.getMinutes();
+if (minutes < 10) {
+    minutes = `0${minutes}`;
+}
+}
+return `${hours}:${minutes}`;
+
+
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -73,7 +87,7 @@ function displayForecast(response) {
     forecastElement.innerHTML += `
     <div class="col-2">
     <h3>
-    12:00
+     ${formatHours(forecast.dt * 1000)}    
     </h3>
 
     <img
