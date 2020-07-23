@@ -46,8 +46,15 @@ span {
   width: 600px;
   margin: 30px auto;
 }
-
 .weekly-temp {
   margin-top: 20px;
   text-align: center;
+}
+.todays-temperature .active {
+  color: black;
+  cursor: default;
+}
+
+.todays-temperature .active:hover {
+  text-decoration: none;
 }
