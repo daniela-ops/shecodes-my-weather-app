@@ -40,17 +40,6 @@ if (hour < 10) {
 dateElement.innerHTML = `${day}, ${month} ${date} ${year}`;
 timeElement.innerHTML = `${hour}:${minute}`;
 
-function formatHours(timestamp) {
-    let hour = now.getHours();
-    let minute = now.getMinutes();
-
-if (minute < 10) {
-    minute = `0${minute}`;
-}
-if (hour < 10) {
-    hour = `0${hour}`;
-formatHours.innerHTML = `${hour}:${minute}`;
-
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -75,11 +64,16 @@ function displayTemperature(response) {
 
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  let forecast = response.data.list[0];
+  forecastElement.innerHTML = null;
+  let forecast = null;
 
-  forecastElement.innerHTML = `<div class="col-2">
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+
+    forecastElement.innerHTML += `
+    <div class="col-2">
     <h3>
-    ${formatHours(forecast.dt * 1000)}
+    12:00
     </h3>
 
     <img
@@ -89,10 +83,11 @@ function displayForecast(response) {
 
     <div class="weather-forecast-temperature">
     <strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(
-    forecast.main.temp_min
-  )}°
+      forecast.main.temp_min
+    )}°
     </div>
     </div>`;
+  }
 }
 
 function search(city) {
