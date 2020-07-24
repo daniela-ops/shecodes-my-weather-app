@@ -50,8 +50,8 @@ function formatHours(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
+  return `${hours}:${minutes}`;
 }
-return `${hours}:${minutes}`;
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
