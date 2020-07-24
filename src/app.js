@@ -40,19 +40,18 @@ if (hour < 10) {
 dateElement.innerHTML = `${day}, ${month} ${date} ${year}`;
 timeElement.innerHTML = `${hour}:${minute}`;
 
-function formatHours(timestamp){
-let date = new Date(timestamp);
-let hours = date.getHours();
-let(hours < 10){
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
     hours = `0${hours}`;
-}
-let minutes = date.getMinutes();
-if (minutes < 10) {
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
     minutes = `0${minutes}`;
-}
+  }
 }
 return `${hours}:${minutes}`;
-
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
